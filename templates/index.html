@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+<meta http-equiv="Pragma" content="no-cache"> 
+<meta http-equiv="Cache-Control" content="no-cache"> 
+<meta http-equiv="Expires" content="0"> 
+<title>后台登录</title> 
+<link href="/static-file/static/css/login.css" type="text/css" rel="stylesheet">
+</head> 
+<body> 
+
+<div class="login">
+    <div class="message">方林装饰-预约</div>
+    <div id="darkbannerwrap"></div>
+    
+    <form method="post"> {% csrf_token %}
+		<input name="action" value="message" type="hidden">
+		<input name="name" placeholder="姓名" required="" type="text">
+		<hr class="hr15">
+        <input name="telphone" placeholder="联系电话" required="" type="text">
+		<hr class="hr15">
+        <input name="qq" placeholder="QQ号" required="" type="text">
+		<hr class="hr15">
+        <input name="park" placeholder="园区" required="" type="text">
+		<hr class="hr15">
+        <input name="housenumber" placeholder="楼号" required="" type="text">
+		<hr class="hr15">
+        <input name="housesize" placeholder="面积" required="" type="text">
+		<hr class="hr15">
+        <input name="address" placeholder="详细地址" required="" type="text">
+		<hr class="hr15">
+		<input value="预约" name="login" style="width:100%;" type="submit">
+		<hr class="hr20">
+		<!-- 帮助 <a onClick="alert('请联系管理员')">忘记密码</a> -->
+	</form>
+
+	
+</div>
+
+<div class="copyright">© 2016品牌名称 by <a href="http://www.mycodes.net/" target="_blank">程序猿</a></div>
+
+</body>
+</html>
