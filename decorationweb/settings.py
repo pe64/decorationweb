@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'decorationweb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'flzhweb',
+        'NAME': 'flzsweb',
         'USER':'root',
         'PASSWORD':'raspberry',
         'HOST':'s-vn.com',
