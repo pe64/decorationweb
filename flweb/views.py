@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.http import HttpResponse
 from django import forms
@@ -40,10 +41,12 @@ def appointment(request):
             park = af.cleaned_data['park']
             housenumber = af.cleaned_data['housenumber']
             housesize = af.cleaned_data['housesize']
-            user = models.UserInfo.objects.get(telphone=telphone)
-            if user:
+            try:
+                models.UserInfo.objects.get(telphone=telphone)
                 messages.add_message(request, messages.ERROR, '该手机号已经预约成功!')
                 return render(request, 'index.html')
-            models.UserInfo.objects.create(name=name,qq=qq,telphone=telphone,address=address,park=park,housenumber=housenumber,housesize=housesize)
+            except:
+                models.UserInfo.objects.create(name=name,qq=qq,telphone=telphone,address=address,park=park,housenumber=housenumber,housesize=housesize)
+                return HttpResponseRedirect('www.fang-lin.com')
 
     return render(request, 'index.html')
