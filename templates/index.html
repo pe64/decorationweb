@@ -13,14 +13,17 @@
 <div class="login">
     <div class="message">方林装饰-预约</div>
     <div id="darkbannerwrap"></div>
-    
+    {% if messages %}
+    {% for message in messages %}
+    <script type="text/javascript" {% if message.tags %} class="{{ message.tags }}" {% endif %} style="padding: 10px">alert("{{ message  }}");</script>
+    {% endfor %}{% endif %}
     <form method="post"> {% csrf_token %}
 		<input name="action" value="message" type="hidden">
 		<input name="name" placeholder="姓名" required="" type="text">
 		<hr class="hr15">
-        <input name="telphone" placeholder="联系电话" required="" type="text">
+        <input name="telphone" placeholder="手机号码" required="" type="text">
 		<hr class="hr15">
-        <input name="qq" placeholder="QQ号" required="" type="text">
+        <input name="qq" placeholder="QQ号" type="text">
 		<hr class="hr15">
         <input name="park" placeholder="园区" required="" type="text">
 		<hr class="hr15">
@@ -28,7 +31,7 @@
 		<hr class="hr15">
         <input name="housesize" placeholder="面积" required="" type="text">
 		<hr class="hr15">
-        <input name="address" placeholder="详细地址" required="" type="text">
+        <input name="address" placeholder="详细地址" type="text">
 		<hr class="hr15">
 		<input value="预约" name="login" style="width:100%;" type="submit">
 		<hr class="hr20">
