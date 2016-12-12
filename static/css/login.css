@@ -11,7 +11,7 @@
 
 body,html{
     height:100%;
-    overflow:hidden;
+    overflow:auto;
 }
 body{
     background:url(/static-file/static/images/web_login_bg.jpg) no-repeat center;
