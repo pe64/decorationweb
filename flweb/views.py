@@ -25,6 +25,7 @@ class AppointmentInfo(forms.Form):
 
 
 def appointment(request):
+    print(28)
     if request.method == 'POST':
         af = AppointmentInfo(request.POST)
         if af.is_valid():

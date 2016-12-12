@@ -19,26 +19,44 @@
     {% endfor %}{% endif %}
     <form method="post"> {% csrf_token %}
 		<input name="action" value="message" type="hidden">
-		<input name="name" placeholder="姓名" required="" type="text">
+		<input id="t1" name="name" placeholder="姓名" required="" type="text">
 		<hr class="hr15">
-        <input name="telphone" placeholder="手机号码" required="" type="text">
+        <input id="t2" name="telphone" placeholder="手机号码" required="" type="text">
 		<hr class="hr15">
-        <input name="qq" placeholder="QQ号" type="text">
+        <input id="t3" name="qq" placeholder="QQ号" type="text">
 		<hr class="hr15">
-        <input name="park" placeholder="园区" required="" type="text">
+        <input id="t4" name="park" placeholder="园区" type="text">
 		<hr class="hr15">
-        <input name="housenumber" placeholder="楼号" required="" type="text">
+        <input id="t5" name="housenumber" placeholder="楼号" type="text">
 		<hr class="hr15">
-        <input name="housesize" placeholder="面积" required="" type="text">
+        <input id="t6" name="housesize" placeholder="面积" required="" type="text">
 		<hr class="hr15">
-        <input name="address" placeholder="详细地址" type="text">
+        <input id="t7" name="address" placeholder="详细地址" type="text" >
 		<hr class="hr15">
-		<input value="预约" name="login" style="width:100%;" type="submit">
+		<input value="预约" name="login" style="width:100%;" type="submit" onclick="check(this.form)">
 		<hr class="hr20">
 		<!-- 帮助 <a onClick="alert('请联系管理员')">忘记密码</a> -->
+        <script type="text/javascript">
+            function check(form) {
+                if(form.address.value=='') {
+                    form.address.value='无';
+                }
+                if(form.qq.value=='') {
+                    form.qq.value='无';
+                }
+                if(form.housenumber.value=='') {
+                    form.housenumber.value='未填';
+                }
+                if(form.park.value=='') {
+                    form.park.value='未填';
+                }
+                if(form.housesize.value=='') {
+                    form.housesize.value='0';
+                }
+            }
+        </script>
 	</form>
 
-	
 </div>
 
 <div class="copyright">© 2016品牌名称 by <a href="http://www.mycodes.net/" target="_blank">程序猿</a></div>
