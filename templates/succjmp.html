@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正在跳转...</title>
+</head>
+<body>
+{% if messages %}
+    {% for message in messages %}
+    <script type="text/javascript" {% if message.tags %} class="{{ message.tags }}" {% endif %} style="padding: 10px">alert("{{ message  }}");</script>
+    {% endfor %}{% endif %}
+<script language='javascript'>document.location = 'http://www.fang-lin.com/'</script>
+</body>
+</html>

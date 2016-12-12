@@ -47,6 +47,7 @@ def appointment(request):
                 return render(request, 'index.html')
             except:
                 models.UserInfo.objects.create(name=name,qq=qq,telphone=telphone,address=address,park=park,housenumber=housenumber,housesize=housesize)
-                return HttpResponseRedirect('www.fang-lin.com')
+                messages.add_message(request, messages.ERROR, '恭喜,您的装修预约成功!')
+                return render(request,'succjmp.html')
 
     return render(request, 'index.html')
