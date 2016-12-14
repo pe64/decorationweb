@@ -52,3 +52,6 @@ def appointment(request):
                 return render(request,'succjmp.html')
 
     return render(request, 'index.html')
+
+def index(request):
+    return render(request, 'succjmp.html')

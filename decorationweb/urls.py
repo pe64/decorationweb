@@ -18,5 +18,6 @@ from django.contrib import admin
 from flweb import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^appointment', views.appointment)
+    url(r'^appointment', views.appointment),
+    url(r'^$',views.index)
 ]
